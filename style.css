@@ -1036,6 +1036,7 @@ section {
   .homeimage img {
     width: 220px;
     height: 220px;
+    margin-top: 50px;
   }
   
   .homeicon a {
