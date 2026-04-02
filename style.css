@@ -1212,19 +1212,22 @@ section {
 
 .project-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .project-links a {
-  width: 45px;
-  height: 45px;
+  padding: 0.6rem 1rem;
   background: var(--accent-primary);
-  border-radius: 50%;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   color: var(--primary-dark);
-  font-size: 1.3rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
   transition: var(--transition-smooth);
   transform: translateY(20px);
   opacity: 0;
@@ -1236,8 +1239,9 @@ section {
 }
 
 .project-links a:hover {
-  transform: scale(1.1);
+  transform: translateY(-3px);
   background: var(--text-white);
+  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
 }
 
 .project-info {
