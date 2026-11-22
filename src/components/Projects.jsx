@@ -1,41 +1,48 @@
 import { projects } from '../data'
+import { ExternalLink, Reveal, SectionHeader } from './ui'
 
 export default function Projects() {
   return (
-    <section id="project">
-      <div className="section-header">
-        <h2>Featured Projects</h2>
-        <p>Some of my recent work and personal projects</p>
-      </div>
-
-      <div className="projects-grid">
-        {projects.map(({ image, title, description, tech, links }, i) => (
-          <div className="project-card" key={title}>
-            <div className="project-image">
-              <img src={image} alt={`Project ${i + 1}`} />
-              <div className="project-overlay">
+    <section id="projects" className="section section-light">
+      <Reveal className="container">
+        <SectionHeader
+          title="Featured Projects"
+          subtitle="Things I've built — from secure Spring Boot APIs to full-stack products."
+          linkLabel="View GitHub"
+          linkUrl="https://github.com/hasibulhimu49"
+        />
+        <div className="projects-grid">
+          {projects.map(({ image, title, description, tech, links }) => (
+            <article key={title} className="card project-card">
+              <div className="project-thumb">
+                {image ? (
+                  <img src={image} alt="" loading="lazy" />
+                ) : (
+                  <div className="thumb-placeholder theme-tech">
+                    <i className="fa-solid fa-server"></i>
+                  </div>
+                )}
+              </div>
+              <div className="project-body">
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <ul className="tags">
+                  {tech.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
                 <div className="project-links">
-                  {links.map(({ href, title: linkTitle, label, external }) => (
-                    <a key={href} href={href} target="_blank" rel="noreferrer" title={linkTitle}>
-                      <i className={external ? 'fa-solid fa-external-link' : 'fa-brands fa-github'}></i>{' '}
-                      {label}
-                    </a>
+                  {links.map(({ label, url, icon }) => (
+                    <ExternalLink key={url} href={url}>
+                      <i className={icon}></i> {label}
+                    </ExternalLink>
                   ))}
                 </div>
               </div>
-            </div>
-            <div className="project-info">
-              <h3>{title}</h3>
-              <p>{description}</p>
-              <div className="project-tech">
-                {tech.map((t) => (
-                  <span key={t}>{t}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+            </article>
+          ))}
+        </div>
+      </Reveal>
     </section>
   )
 }

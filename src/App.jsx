@@ -1,25 +1,31 @@
-import Header from './components/Header'
-import Home from './components/Home'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
 import About from './components/About'
-import Skills from './components/Skills'
+import Experience from './components/Experience'
+import WhatIDo from './components/WhatIDo'
 import Projects from './components/Projects'
+import Channels from './components/Channels'
+import CoursesCommunity from './components/CoursesCommunity'
+import LatestContent from './components/LatestContent'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import FloatingDownload from './components/FloatingDownload'
 
 export default function App() {
   return (
     <>
-      <Header />
+      <Navbar />
       <main>
-        <Home />
+        <Hero />
         <About />
-        <Skills />
+        <Experience />
+        <WhatIDo />
         <Projects />
+        <Channels />
+        <CoursesCommunity />
+        <LatestContent />
         <Contact />
-        <Footer />
       </main>
-      <FloatingDownload />
+      <Footer />
     </>
   )
 }
