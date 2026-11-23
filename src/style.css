@@ -546,7 +546,7 @@ a.card:hover,
   align-items: center;
   /* match the banner photo's proportions (2048x768) so its full height is shown */
   aspect-ratio: 2048 / 768;
-  min-height: 440px;
+  /* no min-height: it would crop the photo; the layout stacks below 1200px instead */
   overflow: hidden;
   background: var(--navy-950);
   color: var(--text-on-dark);
@@ -713,7 +713,7 @@ a.card:hover,
 }
 
 /* Narrower screens: photo on top, text below */
-@media (max-width: 1100px) {
+@media (max-width: 1199px) {
   .hero {
     flex-direction: column;
     align-items: stretch;
@@ -723,7 +723,7 @@ a.card:hover,
   .hero-media {
     position: relative;
     aspect-ratio: 2048 / 768;
-    min-height: 220px;
+    /* no min-height so the whole photo always shows */
   }
   .hero-media img {
     object-position: 82% top;
