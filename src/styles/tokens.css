@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+:root {
+  --navy-950: #070d1a;
+  --navy-900: #0a1324;
+  --navy-800: #101b31;
+  --line-dark: rgba(148, 170, 214, 0.14);
+
+  --bg-light: #f3f6fb;
+  --bg-white: #ffffff;
+  --line-light: #e3e9f3;
+
+  --text-dark: #0f1a2e;
+  --text-muted: #5b6780;
+  --text-on-dark: #e8eefb;
+  --text-on-dark-muted: #9aa8c4;
+
+  --blue: #2f7bff;
+  --blue-light: #4ea3ff;
+  --purple: #8b5cf6;
+  --gradient: linear-gradient(90deg, var(--blue-light) 0%, var(--blue) 45%, var(--purple) 100%);
+
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Poppins', var(--font-body);
+  --font-script: 'Caveat', cursive;
+  --font-signature: 'Mrs Saint Delafield', cursive;
+
+  --radius: 14px;
+  --radius-sm: 10px;
+  --shadow: 0 6px 24px -12px rgba(15, 26, 46, 0.25);
+  --shadow-hover: 0 16px 36px -16px rgba(15, 26, 46, 0.35);
+  --container: 1180px;
+  --nav-h: 68px;
+
+  /* surfaces that change with the theme */
+  --surface-quote: #e9eef8;
+  --tag-bg: #e8f0ff;
+  --signature: #1f2b4d;
+  --card-ring: #ffffff;
+  --dot-muted: #b8c4d9;
+
+  color-scheme: light;
+}
+
+/* Dark theme: only the light content sections change; the header, hero,
+   What I Do, contact band and footer are dark in both themes. */
+:root[data-theme='dark'] {
+  --bg-light: #0b1426;
+  --bg-white: #0f1a2e;
+  --line-light: rgba(148, 170, 214, 0.16);
+
+  --text-dark: #e8eefb;
+  --text-muted: #9aa8c4;
+
+  --shadow: 0 6px 24px -12px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 16px 36px -16px rgba(0, 0, 0, 0.75);
+
+  --surface-quote: #13213b;
+  --tag-bg: rgba(47, 123, 255, 0.16);
+  --signature: #c9d6f2;
+  --card-ring: #0f1a2e;
+  --dot-muted: #3a4a6b;
+
+  color-scheme: dark;
+}

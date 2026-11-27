@@ -1,0 +1,115 @@
+/* ==========================================================================
+   About
+   ========================================================================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-text p {
+  margin-top: 16px;
+  color: var(--text-muted);
+  text-align: justify;
+  hyphens: auto;
+}
+
+.about-text p.signature {
+  margin-top: 18px;
+  font-family: var(--font-signature);
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--signature);
+}
+
+.about-details {
+  padding-left: 40px;
+  border-left: 1px solid var(--line-light);
+}
+
+.about-details ul {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.about-details li {
+  display: flex;
+  gap: 14px;
+  font-size: 0.86rem;
+}
+
+.about-details li i {
+  width: 20px;
+  margin-top: 4px;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+}
+
+.about-details strong {
+  display: block;
+  font-weight: 600;
+}
+
+.about-details span,
+.about-details li a {
+  color: var(--text-muted);
+  word-break: break-word;
+}
+
+.about-details li a:hover {
+  color: var(--blue);
+}
+
+.quote-card {
+  padding: 32px;
+  border-radius: var(--radius);
+  background: var(--surface-quote);
+}
+
+.quote-card i {
+  font-size: 1.8rem;
+  color: var(--blue-light);
+}
+
+.quote-card p {
+  margin-top: 14px;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.quote-card cite {
+  display: block;
+  margin-top: 18px;
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .quote-card {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-details {
+    padding-left: 0;
+    border-left: 0;
+  }
+  /* Justified text leaves big word gaps on narrow screens */
+  .about-text p {
+    text-align: left;
+  }
+}

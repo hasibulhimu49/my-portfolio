@@ -1,0 +1,158 @@
+/* Cards */
+.card {
+  display: block;
+  background: var(--bg-white);
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+a.card:hover,
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.round-icon {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+/* Gradient placeholder thumbnails */
+.theme-tech {
+  background: linear-gradient(135deg, #0b1d3f, #1d4ed8);
+}
+
+.theme-academy {
+  background: linear-gradient(135deg, #0f3b3a, #0f766e);
+}
+
+.theme-vlog {
+  background: linear-gradient(135deg, #7c2d12, #ea580c);
+}
+
+.theme-build {
+  background: linear-gradient(135deg, #1e1b4b, #4338ca);
+}
+
+/* Tech On The Way: neon violet-to-cyan with a faint circuit grid */
+.theme-future {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px) 0 0 / 18px 18px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px) 0 0 / 18px 18px,
+    radial-gradient(circle at 70% 30%, rgba(34, 211, 238, 0.55), transparent 60%),
+    linear-gradient(135deg, #12052e, #5b21b6 55%, #0891b2);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--blue), var(--blue-light));
+  color: #fff;
+  box-shadow: 0 10px 24px -10px rgba(47, 123, 255, 0.8);
+}
+
+.btn-outline {
+  border: 1px solid rgba(232, 238, 251, 0.35);
+  color: var(--text-on-dark);
+}
+
+.btn-outline:hover,
+.btn-pill:hover {
+  border-color: var(--text-on-dark);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.btn-ghost {
+  border: 1px solid var(--line-light);
+  background: var(--bg-white);
+  color: var(--text-dark);
+}
+
+.btn-ghost:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.btn-sm {
+  padding: 8px 14px;
+  font-size: 0.8rem;
+}
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid rgba(232, 238, 251, 0.35);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-on-dark);
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 1.15rem;
+}
+
+.social-icons a {
+  color: inherit;
+  opacity: 0.85;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    color 0.2s;
+}
+
+.social-icons a:hover {
+  opacity: 1;
+  color: var(--blue-light);
+  transform: translateY(-2px);
+}
+
+/* Tag pill: project tech tags and Latest Content labels */
+.tag {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 600;
+}

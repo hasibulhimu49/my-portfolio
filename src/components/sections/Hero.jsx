@@ -1,11 +1,19 @@
-import { profile, socials } from '../data'
-import { ExternalLink, SocialIcons } from './ui'
+import { profile, socials } from '../../data'
+import { ExternalLink, SocialIcons } from '../ui'
+import './Hero.css'
 
 export default function Hero() {
   return (
     <section id="home" className="hero">
       <div className="hero-media">
-        <img src={profile.banner} alt={`${profile.firstName} ${profile.lastName}`} fetchPriority="high" />
+        {/* Above the fold, so no lazy loading; width/height reserve space before the photo arrives */}
+        <img
+          src={profile.banner}
+          alt={`${profile.firstName} ${profile.lastName}`}
+          width="2048"
+          height="768"
+          fetchPriority="high"
+        />
         <p className="hero-script" aria-hidden="true">
           Build
           <br />
@@ -26,7 +34,11 @@ export default function Hero() {
           <p className="hero-roles">
             {profile.roles.map((role, i) => (
               <span key={role}>
-                {i > 0 && <span className="divider">|</span>}
+                {i > 0 && (
+                  <span className="divider" aria-hidden="true">
+                    |
+                  </span>
+                )}
                 {role}
               </span>
             ))}
@@ -36,10 +48,10 @@ export default function Hero() {
 
           <div className="hero-buttons">
             <a href="#work" className="btn btn-primary">
-              Explore My Work <i className="fa-solid fa-arrow-right"></i>
+              Explore My Work <i className="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
             <ExternalLink href={profile.youtubeUrl} className="btn btn-outline">
-              <i className="fa-brands fa-youtube"></i> Watch My YouTube
+              <i className="fa-brands fa-youtube" aria-hidden="true"></i> Watch My YouTube
             </ExternalLink>
           </div>
 

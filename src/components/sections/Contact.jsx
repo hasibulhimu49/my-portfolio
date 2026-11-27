@@ -1,5 +1,6 @@
-import { profile, socials } from '../data'
-import { ExternalLink, Reveal, SocialIcons } from './ui'
+import { profile, socials } from '../../data'
+import { ExternalLink, Reveal, SocialIcons } from '../ui'
+import './Contact.css'
 
 export default function Contact() {
   return (
@@ -17,12 +18,16 @@ export default function Contact() {
         </div>
 
         <div className="contact-actions">
-          <a href={`mailto:${profile.email}`} className="btn btn-primary">
-            <i className="fa-regular fa-envelope"></i> {profile.email}
-          </a>
-          <ExternalLink href={profile.resumeUrl} className="btn btn-outline">
-            <i className="fa-solid fa-download"></i> Download Resume
-          </ExternalLink>
+          {profile.email && (
+            <a href={`mailto:${profile.email}`} className="btn btn-primary">
+              <i className="fa-regular fa-envelope" aria-hidden="true"></i> {profile.email}
+            </a>
+          )}
+          {profile.resumeUrl && (
+            <ExternalLink href={profile.resumeUrl} className="btn btn-outline">
+              <i className="fa-solid fa-download" aria-hidden="true"></i> Download Resume
+            </ExternalLink>
+          )}
           <SocialIcons items={socials} className="contact-socials" />
         </div>
       </Reveal>

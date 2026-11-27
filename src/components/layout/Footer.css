@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  padding: 64px 0 24px;
+  background: radial-gradient(ellipse at 15% 0%, rgba(47, 123, 255, 0.12), transparent 55%), var(--navy-950);
+  border-top: 1px solid var(--line-dark);
+  color: var(--text-on-dark);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 1.1fr 1.2fr;
+  gap: 40px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.footer-roles {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--blue-light);
+}
+
+.footer-bio {
+  max-width: 320px;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--text-on-dark-muted);
+}
+
+.footer-socials {
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.footer-socials a {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line-dark);
+  border-radius: 50%;
+  background: rgba(16, 27, 49, 0.7);
+}
+
+.footer-socials a:hover {
+  border-color: var(--blue-light);
+}
+
+/* Real h2s (they follow the page's section h2s in the outline), styled as small column labels. */
+.footer-col h2 {
+  position: relative;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  /* base.css gives headings line-height 1.2; these keep the body's 1.6 */
+  line-height: inherit;
+  color: #fff;
+}
+
+.footer-col h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 28px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gradient);
+}
+
+.footer-col ul {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  font-size: 0.82rem;
+  color: var(--text-on-dark-muted);
+}
+
+.footer-col a {
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+
+.footer-col .fa-youtube {
+  margin-right: 4px;
+  color: #ff3b3b;
+}
+
+.footer-handle {
+  display: block;
+  margin-left: 22px;
+  font-size: 0.72rem;
+  opacity: 0.7;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  overflow-wrap: anywhere;
+}
+
+.footer-contact i {
+  width: 14px;
+  margin-top: 3px;
+  color: var(--blue-light);
+}
+
+.footer-resume {
+  margin-top: 20px;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-dark);
+  font-size: 0.76rem;
+  color: var(--text-on-dark-muted);
+}
+
+.footer-motto {
+  letter-spacing: 0.12em;
+}
+
+.back-to-top {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: #fff;
+  transition: transform 0.2s;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding-top: 48px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  /* Quick links in two columns so the stacked footer stays short */
+  .footer-grid nav ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-socials {
+    gap: 6px;
+  }
+  .footer-socials a {
+    width: 32px;
+    height: 32px;
+  }
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+}

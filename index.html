@@ -2,28 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta name="theme-color" content="#070d1a" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohammad Hasibul Hasan | Software Engineer</title>
     <meta
       name="description"
       content="Mohammad Hasibul Hasan is a Software Engineer, Educator and Content Creator building with Java, Spring Boot and Spring AI, and teaching on YouTube."
     />
     <meta name="author" content="Mohammad Hasibul Hasan" />
+    <!-- Matches --navy-950: the navbar is dark in both themes. -->
+    <meta name="theme-color" content="#070d1a" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- TODO: once the domain is live, uncomment and use the real URL.
+    <link rel="canonical" href="https://your-domain.com/" /> -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Link previews (LinkedIn, Facebook, WhatsApp, X).
-         After deploying, add og:image / twitter:image with the FULL URL, e.g.
-         <meta property="og:image" content="https://your-domain.com/assets/images/hero-banner.jpg" /> -->
+         TODO after deploying: add og:url, og:image and twitter:image with FULL URLs, e.g.
+         <meta property="og:url" content="https://your-domain.com/" />
+         <meta property="og:image" content="https://your-domain.com/assets/images/hero-banner.jpg" />
+         <meta name="twitter:image" content="https://your-domain.com/assets/images/hero-banner.jpg" />
+         and switch twitter:card to "summary_large_image". -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mohammad Hasibul Hasan" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Mohammad Hasibul Hasan | Software Engineer" />
-    <meta property="og:description" content="Software Engineer, Educator and Content Creator. Java, Spring Boot, Spring AI and tutorials on YouTube." />
+    <meta
+      property="og:description"
+      content="Software Engineer, Educator and Content Creator. Java, Spring Boot, Spring AI and tutorials on YouTube."
+    />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@hasibulhimu49" />
-    <title>Mohammad Hasibul Hasan | Software Engineer</title>
+    <meta name="twitter:creator" content="@hasibulhimu49" />
+    <meta name="twitter:title" content="Mohammad Hasibul Hasan | Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Software Engineer, Educator and Content Creator. Java, Spring Boot, Spring AI and tutorials on YouTube."
+    />
+
     <script>
       // Apply the saved theme before the page paints (no light/dark flash).
+      // Keep in sync with src/hooks/useTheme.js (same storage key and resolution).
       ;(function () {
         var pref = 'system'
         try {
@@ -33,15 +54,26 @@
         document.documentElement.dataset.theme = dark ? 'dark' : 'light'
       })()
     </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&family=Caveat:wght@500;600&family=Mrs+Saint+Delafield&display=swap"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
+    <noscript>
+      <p style="padding: 24px; font-family: system-ui, sans-serif; text-align: center">
+        This site needs JavaScript to display. Please enable it and reload the page.
+      </p>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

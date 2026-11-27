@@ -1,0 +1,156 @@
+/* ==========================================================================
+   Experience
+   ========================================================================== */
+.exp-list {
+  display: grid;
+  gap: 20px;
+}
+
+.exp-card {
+  padding: 26px 28px;
+}
+
+.exp-company {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.exp-logo {
+  width: 56px;
+  height: 56px;
+  padding: 6px;
+  border: 1px solid var(--line-light);
+  border-radius: 12px;
+  background: #fff;
+  object-fit: contain;
+}
+
+.exp-company h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+}
+
+.exp-company p {
+  margin-top: 2px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.exp-company p i {
+  color: var(--blue);
+}
+
+.exp-dot {
+  margin: 0 8px;
+}
+
+.exp-span {
+  margin-left: auto;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--bg-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* vertical timeline */
+.exp-roles {
+  position: relative;
+  margin-top: 22px;
+  padding-left: 28px;
+  list-style: none;
+}
+
+.exp-roles::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  width: 2px;
+  background: var(--line-light);
+}
+
+.exp-roles > li {
+  position: relative;
+}
+
+.exp-roles > li + li {
+  margin-top: 22px;
+}
+
+.exp-roles > li::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -28px;
+  width: 14px;
+  height: 14px;
+  border: 3px solid var(--card-ring);
+  border-radius: 50%;
+  background: var(--dot-muted);
+  box-shadow: 0 0 0 1px var(--line-light);
+}
+
+.exp-roles > li.is-current::before {
+  background: var(--blue);
+  box-shadow: 0 0 0 4px rgba(47, 123, 255, 0.18);
+}
+
+.exp-role-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exp-role-head h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+}
+
+.exp-badge {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(47, 123, 255, 0.1);
+  color: var(--blue);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.exp-badge-promo {
+  background: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
+}
+
+.exp-role-dates {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.exp-points {
+  margin-top: 10px;
+  padding-left: 18px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.exp-points li + li {
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .exp-card {
+    padding: 20px;
+  }
+  .exp-span {
+    margin-left: 0;
+  }
+}

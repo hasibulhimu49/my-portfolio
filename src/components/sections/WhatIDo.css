@@ -1,0 +1,128 @@
+/* ==========================================================================
+   What I Do
+   ========================================================================== */
+/* Heading on its own row; service cards and skills share the next row,
+   same top edge and same height. */
+.whatido-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.whatido-header {
+  grid-column: 1 / -1;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.service-card,
+.skills-card {
+  padding: 22px;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius);
+  background: rgba(16, 27, 49, 0.7);
+  transition:
+    border-color 0.25s,
+    transform 0.25s;
+}
+
+.service-card:hover {
+  border-color: rgba(78, 163, 255, 0.5);
+  transform: translateY(-4px);
+}
+
+.icon-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.15rem;
+}
+
+.badge-blue {
+  background: var(--blue);
+}
+
+.badge-green {
+  background: #16a34a;
+}
+
+.badge-purple {
+  background: var(--purple);
+}
+
+.badge-orange {
+  background: #f97316;
+}
+
+.service-card h3 {
+  margin-top: 16px;
+  font-size: 1.1rem;
+}
+
+.service-card p {
+  margin-top: 8px;
+  font-size: 0.84rem;
+  color: var(--text-on-dark-muted);
+}
+
+.skills-card h3 {
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips li {
+  padding: 6px 12px;
+  border: 1px solid rgba(232, 238, 251, 0.2);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.chips li:hover {
+  border-color: var(--blue-light);
+  background: rgba(47, 123, 255, 0.12);
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .whatido-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  /* Compact 2x2 grid instead of four tall cards */
+  .service-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .service-card {
+    padding: 16px;
+  }
+  .service-card h3 {
+    margin-top: 12px;
+    font-size: 1rem;
+  }
+  .service-card p {
+    font-size: 0.8rem;
+  }
+}

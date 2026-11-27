@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Latest content
+   ========================================================================== */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* 16:9 thumbnail: a video still, or an icon on a theme gradient */
+.content-thumb {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.content-thumb.has-image {
+  overflow: hidden;
+  background: #000;
+}
+
+.content-thumb.has-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-play {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.7rem;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.content-card:hover .content-play {
+  background: #ff0000;
+  transform: scale(1.1);
+}
+
+.content-body {
+  padding: 12px 14px 14px;
+}
+
+.content-body h3 {
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+/* Tag and date line */
+.content-body p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  /* Swipeable row instead of a stacked grid (keeps the page short).
+     Same pattern as .channels-grid and .courses-grid, but narrower
+     cards (70%) so more of the next video peeks in. */
+  .content-grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 70%;
+    gap: 14px;
+    /* bleed to the screen edges, past the container's 16px padding */
+    margin: 0 -16px;
+    padding: 4px 16px 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 16px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .content-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .content-grid > * {
+    scroll-snap-align: start;
+  }
+}

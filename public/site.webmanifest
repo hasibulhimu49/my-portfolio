@@ -1,0 +1,13 @@
+{
+  "name": "Mohammad Hasibul Hasan",
+  "short_name": "MH",
+  "description": "Software Engineer, Educator and Content Creator",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#070d1a",
+  "background_color": "#070d1a",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,177 @@
+/* ==========================================================================
+   YouTube channels
+   ========================================================================== */
+.channels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.channel-card {
+  position: relative;
+}
+
+/* Banner: a cover photo, or an icon on a theme gradient */
+.channel-banner {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 120px;
+  font-size: 2.6rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.channel-banner.theme-future {
+  color: rgba(165, 243, 252, 0.55);
+}
+
+.channel-banner.has-image {
+  overflow: hidden;
+  background: #222;
+}
+
+.channel-banner.has-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text-only banners: show the whole image on black instead of cropping.
+   Must stay after the .has-image rules (same specificity). */
+.channel-banner.fit-contain {
+  background: #000;
+}
+
+.channel-banner.fit-contain img {
+  object-fit: contain;
+}
+
+.play-badge {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 0.9rem;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+
+/* Keep the play button off the face in photo banners */
+.channel-banner.has-image .play-badge {
+  inset: auto 10px 10px auto;
+  margin: 0;
+}
+
+.channel-card:hover .play-badge {
+  transform: scale(1.1);
+  background: #ff0000;
+}
+
+/* Avatar overlaps the bottom edge of the banner */
+.channel-avatar {
+  position: absolute;
+  top: 100px;
+  left: 14px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--card-ring);
+  border-radius: 50%;
+  background: var(--navy-900);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.channel-avatar.theme-future {
+  background: linear-gradient(135deg, #5b21b6, #0891b2);
+  color: #a5f3fc;
+  font-size: 0.85rem;
+}
+
+.channel-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Top padding leaves room for the overlapping avatar */
+.channel-body {
+  padding: 26px 16px 16px;
+}
+
+.channel-body h3 {
+  font-size: 0.95rem;
+}
+
+.channel-category {
+  font-size: 0.78rem;
+  color: var(--blue);
+}
+
+.channel-topics {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.channel-desc {
+  margin-top: 6px;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.channel-subs {
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.channel-subs i {
+  color: var(--text-dark);
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .channels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  /* Swipeable row instead of a stacked grid (keeps the page short).
+     Same pattern as .courses-grid and .content-grid. */
+  .channels-grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 82%;
+    gap: 14px;
+    /* bleed to the screen edges, past the container's 16px padding */
+    margin: 0 -16px;
+    padding: 4px 16px 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 16px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .channels-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .channels-grid > * {
+    scroll-snap-align: start;
+  }
+}
